@@ -1253,3 +1253,32 @@ body::after {
 
     z-index: 2;
 }
+/* 📱 MOBILE PERFORMANCE FIX */
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #heartCanvas,
+    #flowerCanvas {
+        pointer-events: none;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 30px 12px;
+        min-height: auto;
+    }
+
+    .shayari,
+    .card {
+        grid-column: 1;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .card {
+        transform: none;
+    }
+}
