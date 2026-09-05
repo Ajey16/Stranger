@@ -1,0 +1,241 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Bhumi ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- 7000 Tiny Flowers -->
+    <canvas id="flowerCanvas"></canvas>
+
+    <div class="hearts"></div>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Stranger Message -->
+        <div class="shayari">
+
+            <div class="stranger-message">
+
+                <h2>🌸 Hey Stranger... 🌸</h2>
+
+                <p>
+                    If you're reading this, then you've found a space I built to hold onto you.
+                    Not to change what happened between us—just to keep the moments we shared
+                    alive, beautiful and untouched.
+                </p>
+
+                <p>
+                    Every single day, I miss you. Not because I regret knowing you,
+                    but because you mattered. You changed me. The conversations we had
+                    rewired how I think about everything.
+                </p>
+
+                <p>
+                    We may not talk anymore. Life wrote different endings for us.
+                    But that doesn't erase what was—and I refuse to let it fade.
+                </p>
+
+                <p>
+                    This is where you live. Not in the past, but in the truth of what you meant.
+                </p>
+
+                <p class="welcome">
+                    🌷 Welcome home. 🌷
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <!-- Flowers inside card -->
+            <div class="card-flowers">
+
+                <span>🌸</span>
+                <span>🌷</span>
+                <span>🌼</span>
+                <span>🌸</span>
+                <span>🌺</span>
+                <span>🌷</span>
+                <span>🌼</span>
+                <span>🌸</span>
+                <span>🌺</span>
+                <span>🌷</span>
+                <span>🌸</span>
+                <span>🌼</span>
+                <span>🌺</span>
+                <span>🌸</span>
+                <span>🌷</span>
+
+            </div>
+
+
+            <!-- Bhumi Photo -->
+            <div class="photo-frame">
+
+                <img src="Bhumi.jpeg" alt="Bhumi">
+
+            </div>
+
+
+            <!-- Heading -->
+            <h1>
+                ❤️Hey Stranger❤️
+            </h1>
+
+
+            <!-- Button -->
+            <button onclick="openPassword()">
+                Click Me 💕
+            </button>
+
+
+            <!-- Secret Message -->
+            <p id="secretMessage"></p>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+
+    <!-- Password Popup -->
+    <div id="passwordPopup" style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.35);
+        z-index:100;
+        align-items:center;
+        justify-content:center;
+    ">
+
+        <div style="
+            background:white;
+            padding:30px;
+            border-radius:25px;
+            text-align:center;
+            width:320px;
+            box-shadow:0 10px 40px rgba(0,0,0,0.2);
+        ">
+
+            <h2 style="margin-bottom:8px;">
+                🌸 Stranger's Special Day 🌸
+            </h2>
+
+            <h3 style="
+                margin:0;
+                font-size:17px;
+                color:#888;
+            ">
+                The date I could never forget ❤️
+            </h3>
+
+
+            <input
+                id="nameInput"
+                type="text"
+                placeholder="What's your name?"
+                style="
+                    margin-top:25px;
+                    padding:12px;
+                    width:100%;
+                    border:1px solid #ddd;
+                    border-radius:20px;
+                    outline:none;
+                "
+            >
+
+
+            <input
+                id="passwordInput"
+                type="text"
+                placeholder="Type your answer..."
+                style="
+                    margin-top:15px;
+                    padding:12px;
+                    width:100%;
+                    border:1px solid #ddd;
+                    border-radius:20px;
+                    outline:none;
+                "
+            >
+
+
+            <p style="
+                margin-top:8px;
+                font-size:13px;
+                color:#999;
+            ">
+                (Hint: Stranger's Special Day 🌸)
+            </p>
+
+
+            <br><br>
+
+
+            <button onclick="checkPassword()" style="
+                padding:10px 25px;
+                border:none;
+                border-radius:20px;
+                background:#e889aa;
+                color:white;
+                cursor:pointer;
+            ">
+                Continue ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function openPassword() {
+            document.getElementById("passwordPopup").style.display = "flex";
+        }
+
+
+        function checkPassword() {
+
+            const name =
+                document.getElementById("nameInput").value.trim();
+
+            const answer =
+                document.getElementById("passwordInput").value.trim();
+
+
+            if (name !== "" && answer.toLowerCase() === "16") {
+
+                location.href = "page2.html";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

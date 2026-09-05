@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Story ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ede3ff,
+                #ffd6e5
+            );
+
+            color: #66566d;
+        }
+
+        /* BACK BUTTON */
+
+        .back-btn {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            z-index: 20;
+
+            padding: 9px 18px;
+
+            border: none;
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.85);
+
+            color: #8f5aa8;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 18px rgba(100,60,120,0.12);
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* MAIN LAYOUT */
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+
+            padding: 65px 15px 25px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.45fr
+                0.75fr
+                1.45fr;
+
+            gap: 18px;
+        }
+
+
+        /* GENERAL SECTION */
+
+        .section {
+            background: rgba(255,255,255,0.42);
+
+            border: 1px solid rgba(255,255,255,0.65);
+
+            border-radius: 30px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 15px 40px rgba(100,60,120,0.10);
+
+            backdrop-filter: blur(10px);
+
+            overflow-y: auto;
+        }
+
+
+        .section h1 {
+            text-align: center;
+
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+
+            font-weight: 500;
+
+            margin-bottom: 25px;
+
+            color: #8f5aa8;
+        }
+
+
+        /* MY WORDS */
+
+        .words {
+            min-height: 82vh;
+        }
+
+        .word-entry {
+            background: rgba(255,255,255,0.58);
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 6px 18px rgba(100,60,120,0.06);
+        }
+
+        .date {
+            font-size: 13px;
+
+            color: #a56caa;
+
+            margin-bottom: 8px;
+        }
+
+        .word-entry h2 {
+            font-family: Georgia, serif;
+
+            color: #925b9e;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        .word-entry p {
+            font-family: Georgia, serif;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: #66566d;
+        }
+
+
+        /* SONGS */
+
+        .songs {
+            min-height: 82vh;
+
+            padding: 25px 20px;
+        }
+
+        .songs h1 {
+            color: #b04d75;
+
+            font-size: 27px;
+        }
+
+        .song {
+            background: rgba(255,255,255,0.62);
+
+            border-radius: 18px;
+
+            padding: 17px 12px;
+
+            margin-bottom: 15px;
+
+            text-align: center;
+        }
+
+        .song h2 {
+            font-family: Georgia, serif;
+
+            color: #a65378;
+
+            font-size: 17px;
+
+            margin-bottom: 6px;
+        }
+
+        .song p {
+            font-size: 13px;
+
+            color: #806873;
+
+            margin-bottom: 12px;
+        }
+
+        .play-btn {
+            border: none;
+
+            border-radius: 20px;
+
+            padding: 8px 18px;
+
+            background: #e889aa;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* MEMORIES */
+
+        .memories {
+            min-height: 82vh;
+        }
+
+        .memory-entry {
+            background: rgba(255,255,255,0.58);
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 6px 18px rgba(120,60,90,0.06);
+        }
+
+        .memory-entry h2 {
+            font-family: Georgia, serif;
+
+            color: #ad5578;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        .memory-entry p {
+            font-family: Georgia, serif;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: #6d5963;
+
+            margin-bottom: 18px;
+        }
+
+        .heart-note {
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-family: Georgia, serif;
+
+            color: #9b6b9f;
+
+            font-size: 20px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 1000px) {
+
+            body {
+                overflow-y: auto;
+            }
+
+            .page {
+                grid-template-columns: 1fr;
+
+                padding: 70px 15px 25px;
+            }
+
+            .section {
+                min-height: auto;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <button
+        class="back-btn"
+        onclick="location.href='index.html'">
+
+        ← Back
+
+    </button>
+
+
+    <main class="page">
+
+
+        <!-- ========================= -->
+        <!-- MY WORDS FOR YOU -->
+        <!-- ========================= -->
+
+        <section class="section words">
+
+            <h1>🌸 My Words For You 🌸</h1>
+
+
+            <div class="word-entry">
+
+                <div class="date">
+                    📅 5 September 2026
+                </div>
+
+                <h2>
+                    Just Something From My Heart
+                </h2>
+
+                <p>
+                    Some feelings are difficult to explain,
+                    but I still want to write them down.
+                    You became a beautiful part of my life,
+                    and there are moments I will always remember.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- OUR SONGS -->
+        <!-- ========================= -->
+
+        <section class="section songs">
+
+            <h1>🎵 Our Songs</h1>
+
+
+            <div class="song">
+
+                <h2>
+                    Special song ❤️
+                </h2>
+
+                <p>
+                    Sparsh_Sangeet ❤️
+                </p>
+
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src="Sparsh_Sangeet.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+
+            </div>
+
+
+            <div class="song">
+
+                <h2>
+                    Your Fav Song 🌸
+                </h2>
+
+                <p>
+                    Your Fav Song ❤️
+                </p>
+
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src="Your Fav song.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- OUR MEMORIES -->
+        <!-- ========================= -->
+
+        <section class="section memories">
+
+            <h1>💭 Our Memories</h1>
+
+
+            <div class="memory-entry">
+
+                <div class="date">
+                    📅 13 November 2024
+                </div>
+
+                <h2>
+                    The Beginning ❤️
+                </h2>
+
+                <p>
+                    13 November 2024 will always remain one of the most special dates in my life.
+
+                    It was the day I met you for the first time. We talked for a while, and although neither of us probably knew it at that moment, that simple conversation would become the beginning of so many beautiful memories.
+
+                    After that day, somehow, everything started falling into place. The conversations, the laughter, the little moments, and all the time we spent together slowly became some of the most precious parts of my life. For a while, everything just felt perfect.
+
+                    Eventually, time took us in different directions, and we had to go our separate ways. We may not be together today, but I don't regret a single moment of the time we shared. If anything, I feel grateful that I got to know you, spend time with you, and experience all those beautiful moments with you.
+
+                    I don't want to forget any of it.
+
+                    There are so many days, dates, conversations, and little moments connected to you that I want to remember—not because I want to hold on to the past, but because those moments were real, they were beautiful, and they meant something to me.
+
+                    And whenever I look back at this date, I'll remember that 13 November 2024 was where our story began. ❤️
+                </p>
+
+            </div>
+
+
+            <div class="memory-entry">
+
+                <div class="date">
+                    📅 16 August
+                </div>
+
+                <h2>
+                    Your Special Day 🌸
+                </h2>
+
+                <p>
+                    16 August will always be a special date for me.
+
+                    Because it's your special day. 🌸❤️
+
+                    I could never forget this date, because it's the birthday of my favourite person.
+
+                    No matter how much time passes, 16 August will always have a little place in my heart—simply because it's the day you were born.
+
+                    Happy Birthday, Stranger ❤️
+                </p>
+
+            </div>
+
+
+            <div class="heart-note">
+                Every memory has a story. ❤️
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="copyright">
+        © Hey stranger ❤️. All rights reserved. ❤️
+    </footer>
+
+</body>
+
+</html>

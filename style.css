@@ -1,0 +1,1255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,0.55), transparent 18%),
+        radial-gradient(circle at 90% 25%, rgba(255,130,180,0.25), transparent 20%),
+        radial-gradient(circle at 20% 85%, rgba(255,255,255,0.45), transparent 20%),
+        radial-gradient(circle at 85% 85%, rgba(255,120,175,0.3), transparent 20%),
+        linear-gradient(135deg, #ffc1d8, #ffe8f1, #ffd0e2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+}
+
+/* ================================= */
+/* FLOWERS ALL OVER THE SCREEN */
+/* ================================= */
+
+
+/* ================================= */
+/* SMALL HEARTS ALL OVER BACKGROUND */
+/* ================================= */
+
+body::before {
+    content:
+        "♡   ♥      ♡    ♥   ♡       ♥"
+        "    ♥   ♡       ♥     ♡"
+        "♥      ♡   ♥       ♡    ♥"
+        "   ♡       ♥    ♡       ♥"
+        "♥    ♡       ♥      ♡"
+        "     ♥   ♡       ♥    ♡"
+        "♡       ♥     ♡       ♥"
+        "   ♥       ♡    ♥       ♡"
+        "♡    ♥       ♡       ♥"
+        "      ♡    ♥      ♡";
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    color: #e8174f;
+
+    opacity: 0.32;
+
+    font-size: 14px;
+
+    line-height: 62px;
+
+    letter-spacing: 18px;
+
+    word-spacing: 18px;
+
+    text-align: center;
+
+    white-space: pre-wrap;
+
+    overflow: hidden;
+
+    transform: rotate(-4deg);
+}
+
+/* ================================= */
+/* EXTRA TINY HEARTS */
+/* ================================= */
+
+body::after {
+    content:
+        "♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥"
+        "♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥"
+        "♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    color: #ff1744;
+
+    opacity: 0.25;
+
+    font-size: 8px;
+
+    line-height: 40px;
+
+    letter-spacing: 30px;
+
+    word-spacing: 25px;
+
+    text-align: center;
+
+    white-space: pre-wrap;
+
+    overflow: hidden;
+}
+
+/* ================================= */
+/* FLOATING HEARTS */
+/* ================================= */
+
+.hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 15;
+}
+
+.heart {
+    position: absolute;
+
+    bottom: -60px;
+
+    color: #ff1744;
+
+    text-shadow:
+        0 0 8px rgba(255, 50, 100, 0.55),
+        0 0 15px rgba(255, 100, 150, 0.35);
+
+    animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(0.7)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.9;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            scale(1)
+            rotate(15deg);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-30px)
+            scale(1.3)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+/* ================================= */
+/* MAIN CONTENT */
+/* ================================= */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 40px;
+
+    position: relative;
+    z-index: 10;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0;
+}
+
+/* ================================= */
+/* WHITE CARD */
+/* ================================= */
+
+.card {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    padding: 38px 30px 50px;
+
+    text-align: center;
+
+    position: relative;
+
+    background: rgba(255,255,255,0.88);
+
+    border-radius: 35px;
+
+    border: 2px solid rgba(255,150,190,0.45);
+
+    box-shadow:
+        0 25px 70px rgba(190,70,120,0.28),
+        0 0 40px rgba(255,120,170,0.25);
+
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+}
+
+/* ================================= */
+/* FLOWERS INSIDE CARD */
+/* ================================= */
+
+/* ================================= */
+/* PHOTO */
+/* ================================= */
+.card-flowers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.card-flowers span {
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.35;
+}
+.card-flowers span {
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.45;
+}
+
+/* Random positions */
+.card-flowers span:nth-child(1)  { top: 8%;  left: 8%; }
+.card-flowers span:nth-child(2)  { top: 18%; left: 88%; }
+.card-flowers span:nth-child(3)  { top: 30%; left: 5%; }
+.card-flowers span:nth-child(4)  { top: 42%; left: 92%; }
+.card-flowers span:nth-child(5)  { top: 55%; left: 7%; }
+.card-flowers span:nth-child(6)  { top: 68%; left: 90%; }
+.card-flowers span:nth-child(7)  { top: 82%; left: 12%; }
+.card-flowers span:nth-child(8)  { top: 90%; left: 82%; }
+.card-flowers span:nth-child(9)  { top: 12%; left: 45%; }
+.card-flowers span:nth-child(10) { top: 25%; left: 70%; }
+.card-flowers span:nth-child(11) { top: 48%; left: 18%; }
+.card-flowers span:nth-child(12) { top: 62%; left: 75%; }
+.card-flowers span:nth-child(13) { top: 75%; left: 45%; }
+.card-flowers span:nth-child(14) { top: 35%; left: 50%; }
+.card-flowers span:nth-child(15) { top: 88%; left: 58%; }
+.photo-frame {
+    width: 280px;
+
+    height: 280px;
+
+    margin: 35px auto 25px;
+
+    border-radius: 50%;
+
+    padding: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f8b,
+            #ffd1df,
+            #ff78a8,
+            #ffd1df
+        );
+
+    box-shadow:
+        0 10px 40px rgba(220,70,120,0.35),
+        0 0 30px rgba(255,120,170,0.3);
+
+    animation: photoFloat 4s ease-in-out infinite;
+
+    position: relative;
+z-index: 5;
+}
+
+/* Flowers around photo */
+
+.photo-frame::before {
+    content: "🌸   🌷   🌸   🌷   🌸";
+
+    position: absolute;
+
+    top: -23px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 19px;
+
+    white-space: nowrap;
+}
+
+.photo-frame img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    border: 4px solid white;
+}
+
+@keyframes photoFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            scale(1.02);
+    }
+}
+
+/* ================================= */
+/* TEXT */
+/* ================================= */
+
+.small-text {
+    color: #b45b7d;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: #d6336c;
+
+    font-size: 58px;
+
+margin-top: 90px;
+
+    margin-bottom: 15px;
+
+transform: translateX(15px);
+
+    text-shadow:
+        0 3px 10px rgba(214,51,108,0.18);
+}
+
+.message {
+    color: #555;
+
+    font-size: 19px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+/* ================================= */
+/* BUTTON */
+/* ================================= */
+
+button {
+margin-top: 30px;
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5c8a,
+            #ff174f
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255,70,130,0.3);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(255,50,120,0.45);
+}
+
+/* ================================= */
+/* SECRET MESSAGE */
+/* ================================= */
+
+#secretMessage {
+    margin-top: 25px;
+
+    color: #d6336c;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+
+        padding-top: 90px;
+    }
+
+    .card {
+        padding: 30px 20px 40px;
+
+        border-radius: 28px;
+    }
+
+    .photo-frame {
+        width: 220px;
+
+        height: 220px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+
+    body::before {
+        font-size: 11px;
+
+        line-height: 52px;
+
+        letter-spacing: 12px;
+
+        word-spacing: 10px;
+    }
+
+    body::after {
+        font-size: 7px;
+
+        line-height: 36px;
+
+        letter-spacing: 20px;
+
+        word-spacing: 12px;
+    }
+
+    .card::before,
+    .card::after {
+        font-size: 18px;
+    }
+}
+/* ================================= */
+/* 15,000 BACKGROUND HEARTS - CANVAS */
+/* ================================= */
+
+#heartCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+/* ================================= */
+/* 💕 TWO SEPARATE BACKGROUNDS */
+/* ================================= */
+
+body {
+    background: linear-gradient(
+        90deg,
+        #ffe1ec 0%,
+        #ffd5e4 49.5%,
+        #fff0f6 49.5%,
+        #fff0f6 50.5%,
+        #ffc1d8 50.5%,
+        #ffd0e2 100%
+    );
+}
+
+    
+/* ================================= */
+/* 🎀 CENTER PHOTO CARD IN RIGHT HALF */
+/* ================================= */
+
+.card {
+    width: min(620px, 100%);
+    margin: 0 auto;
+}
+/* ================================= */
+/* 💗 EXACT RIGHT-SIDE CENTER */
+/* ================================= */
+
+.container {
+    grid-template-columns: 50% 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card {
+    grid-column: 2;
+    justify-self: center;
+    width: min(620px, 90%);
+    margin: 0;
+}
+/* ================================= */
+/* 💗 FINAL 50/50 LAYOUT */
+/* ================================= */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+.shayari {
+    grid-column: 1;
+
+    width: 88%;
+    padding: 30px;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shayari p {
+    max-width: 480px;
+
+    color: #9c3f68;
+
+    font-size: 24px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+    text-shadow:
+        0 2px 8px rgba(156, 63, 104, 0.15);
+}
+
+.card {
+    grid-column: 2;
+
+    width: min(620px, 90%);
+
+    margin: 0 auto;
+
+    justify-self: center;
+}
+/* ================================= */
+/* 💜 LEFT SHAYARI BACKGROUND */
+/* ================================= */
+
+body {
+    background:
+        linear-gradient(
+            90deg,
+            #ede3ff 0%,
+            #ede3ff 49.5%,
+            #fff0f6 49.5%,
+            #fff0f6 50.5%,
+            #ffc1d8 50.5%,
+            #ffd0e2 100%
+        );
+}
+/* LEFT SIDE - LAVENDER */
+body {
+    background:
+        linear-gradient(
+            90deg,
+            #ede3ff 0%,
+            #ede3ff 50%,
+            #ffc1d8 50%,
+            #ffd0e2 100%
+        ) !important;
+}
+/* Hide little-heart canvas on left side */
+#heartCanvas {
+    clip-path: inset(0 0 0 50%);
+}
+/* ================================= */
+/* 💜 LITTLE HEARTS ONLY ON RIGHT */
+/* ================================= */
+
+body::before,
+body::after {
+    position: fixed;
+
+    inset: 0 0 0 50%;
+
+    width: 50%;
+    height: 100%;
+}
+/* 💗 Move photo card slightly to the right */
+
+.card {
+    transform: translateX(35px);
+}
+/* ================================= */
+/* 🌻 SUNFLOWERS - RIGHT SIDE */
+/* ================================= */
+
+.sunflower-top,
+.sunflower-bottom {
+    position: fixed;
+    right: 15px;
+
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+
+    pointer-events: none;
+    z-index: 3;
+}
+
+.sunflower-top {
+    top: 12px;
+}
+
+.sunflower-bottom {
+    bottom: 12px;
+}
+
+.sunflower-top span,
+.sunflower-bottom span {
+    font-size: 24px;
+    opacity: 0.85;
+}
+/* ================================= */
+/* 🌸 STRANGER MESSAGE - AESTHETIC */
+/* ================================= */
+
+.shayari {
+    padding: 35px 45px;
+}
+
+/* Main Heading */
+
+.stranger-message {
+    max-width: 500px;
+}
+
+.stranger-message h2 {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #8f5aa8;
+
+    text-shadow:
+        0 3px 12px rgba(143, 90, 168, 0.18);
+
+    position: relative;
+}
+
+/* Small decorative line */
+
+.stranger-message h2::after {
+    content: "♡";
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 18px;
+
+    color: #d96b9b;
+
+    opacity: 0.8;
+}
+
+
+/* Main Text */
+
+.stranger-message p {
+    max-width: 500px;
+
+    margin-bottom: 19px;
+
+    color: #66566d;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    font-style: normal;
+
+    letter-spacing: 0.2px;
+
+    text-align: center;
+
+    text-shadow:
+        0 1px 5px rgba(100, 70, 100, 0.08);
+}
+
+
+/* Welcome Home */
+
+.stranger-message .welcome {
+    margin-top: 25px;
+
+    margin-bottom: 0;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #b04f7c;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 8px rgba(176, 79, 124, 0.18);
+}
+/* ================================= */
+/* 💜 LEFT SIDE AESTHETIC DECORATION */
+/* ================================= */
+
+.shayari {
+    position: relative;
+    padding: 45px 55px;
+
+    border: 1px solid rgba(143, 90, 168, 0.16);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 10px 40px rgba(143, 90, 168, 0.08),
+        inset 0 0 30px rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(3px);
+}
+
+/* ✨ Soft glowing dots */
+
+.shayari::before {
+    content: "✦  ·  ✧  ·  ✦";
+
+    position: absolute;
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 15px;
+
+    letter-spacing: 7px;
+
+    color: #b78ac7;
+
+    opacity: 0.65;
+
+    text-shadow:
+        0 0 10px rgba(183, 138, 199, 0.7);
+}
+
+/* ✨ Bottom decoration */
+
+.shayari::after {
+    content: "✧  ·  ♡  ·  ✧";
+
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 14px;
+
+    letter-spacing: 6px;
+
+    color: #c27da0;
+
+    opacity: 0.6;
+
+    text-shadow:
+        0 0 10px rgba(194, 125, 160, 0.5);
+}
+
+/*  Welcome Home */
+
+.stranger-message .welcome::before {
+    content: "🌷 ";
+
+    font-size: 16px;
+}
+
+.stranger-message .welcome::after {
+    content: " 🌷";
+
+    font-size: 16px;
+}
+/* ================================= */
+/* 💜 FINAL LEFT SIDE BALANCE */
+/* ================================= */
+
+.shayari {
+    grid-column: 1;
+
+    width: 88%;
+    margin-left: 6%;
+
+    padding: 45px 50px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    border: 1px solid rgba(143, 90, 168, 0.16);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 10px 40px rgba(143, 90, 168, 0.08),
+        inset 0 0 30px rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* ================================= */
+/* 🌸 HEY STRANGER */
+/* ================================= */
+
+.stranger-message {
+    width: 100%;
+    max-width: 500px;
+}
+
+.stranger-message h2 {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #8f5aa8;
+
+    text-shadow:
+        0 3px 12px rgba(143, 90, 168, 0.18);
+}
+
+.stranger-message h2::after {
+    content: "♡";
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 18px;
+
+    color: #d96b9b;
+
+    opacity: 0.8;
+}
+
+
+/* ================================= */
+/* 📖 MAIN TEXT */
+/* ================================= */
+
+.stranger-message p {
+    max-width: 500px;
+
+    margin: 0 auto 19px;
+
+    color: #66566d;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    font-style: normal;
+
+    letter-spacing: 0.2px;
+
+    text-align: center;
+
+    text-shadow:
+        0 1px 5px rgba(100, 70, 100, 0.08);
+}
+
+
+/* ================================= */
+/* 🌷 WELCOME HOME */
+/* ================================= */
+
+.stranger-message .welcome {
+    margin-top: 25px;
+
+    margin-bottom: 0;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #b04f7c;
+
+    letter-spacing: 1px;
+}
+
+.stranger-message .welcome::before {
+    content: "🌷 ";
+
+    font-size: 16px;
+}
+
+.stranger-message .welcome::after {
+    content: " 🌷";
+
+    font-size: 16px;
+}
+
+
+/* ================================= */
+/* ✨ LEFT DECORATION */
+/* ================================= */
+
+.shayari::before {
+    content: "✦  ·  ✧  ·  ✦";
+
+    position: absolute;
+
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 15px;
+
+    letter-spacing: 7px;
+
+    color: #b78ac7;
+
+    opacity: 0.65;
+
+    text-shadow:
+        0 0 10px rgba(183, 138, 199, 0.7);
+}
+
+.shayari::after {
+    content: "✧  ·  ♡  ·  ✧";
+
+    position: absolute;
+
+    bottom: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 14px;
+
+    letter-spacing: 6px;
+
+    color: #c27da0;
+
+    opacity: 0.6;
+}
+
+
+/* ================================= */
+/* 💗 RIGHT CARD BALANCE */
+/* ================================= */
+
+.card {
+    grid-column: 2;
+
+    width: min(620px, 90%);
+
+    margin: 0 auto;
+
+    justify-self: center;
+
+    transform: translateX(35px);
+}
+
+
+/* ================================= */
+/* 📱 MOBILE */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .shayari {
+        width: 96%;
+        margin-left: 2%;
+
+        padding: 40px 25px;
+    }
+
+    .stranger-message h2 {
+        font-size: 34px;
+    }
+
+    .stranger-message p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .stranger-message .welcome {
+        font-size: 18px;
+    }
+
+    .card {
+        transform: translateX(0);
+    }
+}
+/* ================================= */
+/* 🌸 LEFT SIDE ROMANTIC DECORATION */
+/* ================================= */
+
+.shayari {
+    overflow: hidden;
+}
+
+/* 🌸 Decorative flowers */
+
+.shayari::before {
+    content: "🌸   ✦   🌷   ✧   🌸";
+
+    position: absolute;
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 16px;
+    letter-spacing: 5px;
+
+    opacity: 0.65;
+
+    pointer-events: none;
+}
+
+/* ✨ Bottom decoration */
+
+.shayari::after {
+    content: "🌷   ♡   ✦   ♡   🌷";
+
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 15px;
+    letter-spacing: 5px;
+
+    opacity: 0.6;
+
+    pointer-events: none;
+}
+
+/* 💕 Small hearts around left message */
+
+.stranger-message {
+    position: relative;
+}
+
+.stranger-message::before {
+    content: "♡     ♥     ♡";
+
+    position: absolute;
+
+    top: 45%;
+    left: -45px;
+
+    font-size: 14px;
+
+    color: #d96b9b;
+
+    opacity: 0.45;
+
+    letter-spacing: 12px;
+
+    pointer-events: none;
+}
+
+.stranger-message::after {
+    content: "♡     ♥     ♡";
+
+    position: absolute;
+
+    top: 55%;
+    right: -45px;
+
+    font-size: 14px;
+
+    color: #d96b9b;
+
+    opacity: 0.45;
+
+    letter-spacing: 12px;
+
+    pointer-events: none;
+}
+
+/* ✨ Soft glow */
+
+.shayari {
+    box-shadow:
+        0 10px 40px rgba(143, 90, 168, 0.08),
+        0 0 35px rgba(190, 130, 210, 0.10),
+        inset 0 0 30px rgba(255, 255, 255, 0.18);
+}
+/* ================================= */
+/* 🌸 DECORATION OUTSIDE LEFT BORDER */
+/* ================================= */
+
+.shayari {
+    overflow: visible;
+}
+
+/* 🌸 Top-left flower */
+
+.shayari::before {
+    content: "🌸";
+    position: absolute;
+
+    top: -35px;
+    left: -35px;
+
+    font-size: 32px;
+    opacity: 0.65;
+
+    transform: rotate(-15deg);
+
+    pointer-events: none;
+}
+
+/* 🌷 Bottom-right flower */
+
+.shayari::after {
+    content: "🌷";
+    position: absolute;
+
+    bottom: -38px;
+    right: -35px;
+
+    font-size: 34px;
+    opacity: 0.65;
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
+}
+/* ================================= */
+/* 🌸 7000 TINY FLOWERS - LEFT SIDE */
+/* ================================= */
+
+#flowerCanvas {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
