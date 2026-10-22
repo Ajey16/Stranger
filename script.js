@@ -214,7 +214,7 @@ const photoFlowers = [
     "💮"
 ];
 
-for (let i = 0; i < 800; i++) {
+for (let i = 0; i < 60; i++) {
 
     const flower = document.createElement("span");
 
