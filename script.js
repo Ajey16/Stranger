@@ -350,7 +350,7 @@ const flowerCtx =
 
 let flowers = [];
 
-const FLOWER_COUNT = 1000;
+const FLOWER_COUNT = 300;
 
 
 // Create flowers
